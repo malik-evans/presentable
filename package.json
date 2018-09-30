@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "semantic-ui": "^2.4.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
