@@ -1,0 +1,6 @@
+{
+    "root": "./docs",
+    "styles": {
+        "website": "semantic/semantic.css"
+    }
+}
