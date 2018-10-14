@@ -10,10 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.16.0",
-    "express": "^4.16.3",
+    "@nestjs/common": "^5.3.11",
+    "@nestjs/core": "^5.3.11",
+    "@nestjs/swagger": "^2.5.1",
+    "@nestjs/testing": "^5.3.11",
+    "@nuxtjs/axios": "^5.3.3",
+    "fastify": "^1.12.1",
+    "fastify-swagger": "^0.15.1",
     "nuxt": "^2.0.0",
-    "semantic-ui": "^2.4.0"
+    "rxjs": "^6.3.3",
+    "semantic-ui": "^2.4.0",
+    "semantic-ui-vue": "^0.5.0",
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@types/node": "^10.11.3",
