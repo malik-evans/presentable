@@ -1,11 +1,10 @@
 import 'reflect-metadata';
-import {Builder} from 'nuxt';
 import {NestFactory} from "@nestjs/core";
 import AppModule from "./app/app.module";
 import {HttpServer} from "@nestjs/common";
 import {configureSwaggerDocument} from './configure';
 import {SwaggerModule} from '@nestjs/swagger';
-import nuxtApp from './nuxt-config';
+import { join } from 'path';
 
 const PORT = 8000;
 
@@ -16,14 +15,11 @@ function listen(app: HttpServer | any, port: number = PORT) {
 }
 
 async function bootstrap(module: AppModule) {
-    const nestApp = await NestFactory.create(module);
-    SwaggerModule.setup('swagger', nestApp, configureSwaggerDocument(nestApp));
-    nestApp.setGlobalPrefix('api');
-    nestApp.use(nuxtApp.render);
-
-    new Builder(nuxtApp)
-        .build()
-        .then(_ => listen(nestApp));
+    const app = await NestFactory.create(module);
+    SwaggerModule.setup('swagger', app, configureSwaggerDocument(app));
+    app.setGlobalPrefix('api');
+    app.useStaticAssets(join(__dirname, '..', 'client/dist/client'));
+    listen(app);
 }
 
 bootstrap(AppModule);

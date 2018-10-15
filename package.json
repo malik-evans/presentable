@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "nuxt": "nuxt",
-    "nodemon": "nodemon"
+    "dev:client": "cd src/client && ng build --watch",
+    "dev:server": "nodemon",
+    "dev:sync": "browser-sync start --config browser-sync.js",
+    "dev": "concurrently  \" npm run dev:server \" \" npm run dev:client \"  \" npm run dev:sync \" "
   },
   "author": "",
   "license": "ISC",
@@ -14,17 +16,14 @@
     "@nestjs/core": "^5.3.11",
     "@nestjs/swagger": "^2.5.1",
     "@nestjs/testing": "^5.3.11",
-    "@nuxtjs/axios": "^5.3.3",
-    "fastify": "^1.12.1",
-    "fastify-swagger": "^0.15.1",
-    "nuxt": "^2.0.0",
     "rxjs": "^6.3.3",
     "semantic-ui": "^2.4.0",
-    "semantic-ui-vue": "^0.5.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
     "@types/node": "^10.11.3",
+    "browser-sync": "^2.26.3",
+    "concurrently": "^4.0.1",
     "gulp": "^3.9.1",
     "nodemon": "^1.18.4",
     "reflect-metadata": "^0.1.12",
