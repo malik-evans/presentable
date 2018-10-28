@@ -4,22 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:client": "cd src/client && ng build --watch",
+    "dev:client": "cd src/client && ng build --watch --extract-css",
     "dev:server": "nodemon",
     "dev:sync": "browser-sync start --config browser-sync.js",
-    "dev": "concurrently  \" npm run dev:server \" \" npm run dev:client \"  \" npm run dev:sync \"   \" npm run compodoc \" ",
+    "dev": "concurrently  \" npm run dev:server \" \" npm run dev:client \"  \" npm run dev:sync \" ",
     "compodoc": "./node_modules/.bin/compodoc -p src/client/tsconfig.json -w -s -d src/client/docs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nestjs/common": "^5.3.11",
-    "@nestjs/core": "^5.3.11",
-    "@nestjs/swagger": "^2.5.1",
-    "@nestjs/testing": "^5.3.11",
-    "rxjs": "^6.3.3",
-    "semantic-ui": "^2.4.0",
-    "vue": "^2.5.17"
+    "semantic-ui": "^2.4.0"
   },
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.5",
