@@ -1,7 +1,7 @@
 import {NestFactory} from '@nestjs/core';
 import {AppModule} from './app.module';
-import {join} from 'path';
 import {SwaggerModule, DocumentBuilder} from '@nestjs/swagger';
+import { config } from 'dotenv';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
@@ -12,10 +12,10 @@ async function bootstrap() {
     const appDocument = SwaggerModule.createDocument(app, appDocumentOptions);
     SwaggerModule.setup('swagger.json', app, appDocument);
     app.setGlobalPrefix('api');
-    app.useStaticAssets(join(__dirname, '../../client/dist/client'));
+  config();
 
-    await app.listen(8000, () => {
-        console.log('listening on port 3000');
+  await app.listen(<any>process.env.PORT, () => {
+      console.log('listening on port 8000');
     });
 }
 

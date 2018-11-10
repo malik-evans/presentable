@@ -1,6 +1,7 @@
 module.exports = {
-    proxy: 'http://localhost:8000/',
+  port: 3000,
+  server: 'src/client/dist',
     files: ['src/server/**', 'src/client/src/**'],
     reloadDelay: 1000,
-    reloadDebounce: 2000
+  reloadDebounce: 1000,
 };

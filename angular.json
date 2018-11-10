@@ -5,7 +5,7 @@
   "projects": {
     "client": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "src/client",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -13,18 +13,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "src/client/dist/",
+            "index": "src/client/src/index.html",
+            "main": "src/client/src/main.ts",
+            "polyfills": "src/client/src/polyfills.ts",
+            "tsConfig": "src/client/src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/client/src/assets/"
             ],
             "styles": [
-              "../../node_modules/semantic-ui/dist/semantic.css",
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           },
@@ -32,8 +30,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/client/src/environments/environment.ts",
+                  "with": "src/client/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -62,23 +60,25 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "client:build"
+            "browserTarget": "client:build",
+            "proxyConfig": "./proxy.conf.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "src/client/src/test.ts",
+            "polyfills": "src/client/src/polyfills.ts",
+            "tsConfig": "src/client/src/tsconfig.spec.json",
+            "karmaConfig": "src/client/src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/client/src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/client/src/favicon.ico",
+              "src/client/src/assets"
             ]
           }
         },
@@ -86,8 +86,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "src/client/src/tsconfig.app.json",
+              "src/client/src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -115,7 +115,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": "e2e/client/src/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -124,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "client"
+  "defaultProject": "src/client"
 }
