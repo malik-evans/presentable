@@ -1,3 +1,8 @@
-<div class="ui container">
-    <h1>Hello {{ title }}</h1>
-</div>
+<mat-grid-list cols="1" rowHeight="7:1">
+    <mat-grid-tile>
+        <mat-card>
+            <h1>Hello client from server</h1>
+            <pre><code>{{ data | json }}</code></pre>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

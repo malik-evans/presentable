@@ -12,10 +12,10 @@ async function bootstrap() {
     const appDocument = SwaggerModule.createDocument(app, appDocumentOptions);
     SwaggerModule.setup('swagger.json', app, appDocument);
     app.setGlobalPrefix('api');
-    app.useStaticAssets(join(__dirname, '../../client/dist/client'));
+  app.useStaticAssets(join(__dirname, '../../client/dist/'));
 
     await app.listen(8000, () => {
-        console.log('listening on port 3000');
+      console.log('listening on port 8000');
     });
 }
 

@@ -1,0 +1,7 @@
+{
+  "tsconfig": "./tsconfig.json",
+  "name": "presentable",
+  "serve": 8080,
+  "exportFormat": "html",
+  "output": "./src/client/dist/docs"
+}

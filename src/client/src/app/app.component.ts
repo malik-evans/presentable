@@ -1,13 +1,20 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-    template: `
-        <div class="ui container">
-            <h1>Hello</h1>
-        </div>
-    `
+  templateUrl: './app.component.html',
 })
-export class AppComponent {
-    title = 'app works';
+export class AppComponent implements OnInit {
+  data: object;
+
+  constructor(private http: HttpClient) {
+  }
+
+  ngOnInit(): void {
+    this.http.get('api/cats').subscribe(res => {
+      this.data = res;
+    });
+  }
+
 }
