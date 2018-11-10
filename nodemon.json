@@ -1,8 +1,8 @@
 {
   "watch": [
-    "src/server"
+    "dist/**"
   ],
   "ext": "ts",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "ts-node -r tsconfig-paths/register src/server/src/main.ts"
+  "exec": "node dist/out-tsc/main.js"
 }
