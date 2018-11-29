@@ -1,6 +1,6 @@
 {
   "exclude": ["**/node_modules/**"],
-  "include": ["./src/server/main.ts"],
+  "include": ["./src/server/*.ts"],
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -26,6 +26,9 @@
     "paths": {
       "@client/*": [
         "./src/client/*"
+      ],
+      "@root/*": [
+        ".*"
       ],
       "@server/*": [
         "./src/server/*"

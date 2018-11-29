@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Server",
+    "file": "server.md"
+  },
+  {
+    "title": "welcome",
+    "file": "welcome.md",
+    "children": [
+      {
+        "title": "welcome back",
+        "file": "welcomeback.md"
+      }
+    ]
+  },
+  {
+    "title": "developer",
+    "file": "developer.md"
+  }
+]

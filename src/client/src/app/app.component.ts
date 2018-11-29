@@ -1,20 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { AppService } from './app.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   data: object;
-
-  constructor(private http: HttpClient) {
-  }
-
-  ngOnInit(): void {
-    this.http.get('api/cats').subscribe(res => {
-      this.data = res;
-    });
-  }
+  isLoading: Observable<boolean> = this.appService.isLoading$;
+  constructor(private appService: AppService) {}
 
 }
