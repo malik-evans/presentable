@@ -1,5 +1,5 @@
-import {Module} from "@nestjs/common";
-import {CatController} from "./cat.controller";
+import {Module} from '@nestjs/common';
+import {CatController} from './cat.controller';
 import { CatService } from './cat.service';
 
 /**

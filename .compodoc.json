@@ -2,5 +2,6 @@
   "tsconfig": "./src/server/tsconfig.json",
   "name": "Presentable",
   "exportFormat": "html",
-  "output": "./dist/docs"
+  "output": "./dist/docs",
+  "includes": "src/"
 }
