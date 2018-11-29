@@ -1,7 +1,7 @@
 ﻿**Presentable**
 
 **All roads lead to compodoc**
-[Compodoc](https://github.com/compodoc/compodoc)  is the single source of truth for developers, designers, architects and alike whereas developing in a node environment.
+[Compodoc](https://github.com/compodoc/compodoc)  is the single source of truth for developers, designers, artchitechs and alike whereas developing in a node environment.
 
 Inversion of control is becoming the norm as the base for source code architecture. Developers with an obligation to produce object oriented software may find their workflow mutating toward already well-tested conventions.    
 
@@ -49,7 +49,8 @@ __
     npm run serve:dev
 
 **Possible Ports in use**
-**| Port   | Module | Config |**
+| Port  | Module | Config |
+|-------|-----------| -------- |
 |  5000 | browser-sync |  browser-sync.js  |
 |  8000 | nodemon  |  nodemon.json | 
 |  8080 | compodoc  |  .compodoc.json |
