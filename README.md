@@ -49,12 +49,13 @@ __
     npm run serve:dev
 
 **Possible Ports in use**
-| Port  | Module | Config |
-|-------|-----------| -------- |
+
+| Port  | Module       | Config            |
+|-------|--------------|-------------------|
 |  5000 | browser-sync |  browser-sync.js  |
-|  8000 | nodemon  |  nodemon.json | 
-|  8080 | compodoc  |  .compodoc.json |
-|  4000 | gitbook  | none | 
+|  8000 | nodemon      |  nodemon.json     | 
+|  8080 | compodoc     |  .compodoc.json   |
+|  4000 | gitbook      | none              | 
 
 **Development Endpoints**
 
